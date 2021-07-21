@@ -18,8 +18,9 @@ public class AccountsPageTest extends BaseClass {
 	}
 
 	@Then("^I should click the \"([^\"]*)\" link$")
-	public void i_should_click_the_link(String tab)  {
+	public void i_should_click_the_link(String tab) throws InterruptedException  {
 	   driver.findElement(By.xpath("//a[@title='"+tab+" Tab']")).click();
+	   Thread.sleep(2000);
 	}
 	@Then("^I should close the browser$")
 	public void i_should_close_the_browser()  {
