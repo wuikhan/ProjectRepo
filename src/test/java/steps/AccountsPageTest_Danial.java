@@ -10,7 +10,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class AccountsPageTest extends BaseClass {
+public class AccountsPageTest_Danial extends BaseClass {
 	@Given("^I enter \"([^\"]*)\" username And I enter \"([^\"]*)\" password$")
 	public void i_enter_username_And_I_enter_password(String username, String password) {
 		driver.findElement(By.id("username")).sendKeys(username);
