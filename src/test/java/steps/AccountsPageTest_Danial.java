@@ -19,7 +19,7 @@ public class AccountsPageTest_Danial extends BaseClass {
 
 	@Then("^I should click the \"([^\"]*)\" link$")
 	public void i_should_click_the_link(String tab) throws InterruptedException {
-		driver.findElement(By.xpath("//a[@title='" + tab + " Tab']")).click();
+		driver.findElement(By.xpath("//a[@title='" + tab +"Tab']")).click();
 		Thread.sleep(2000);
 	}
 
@@ -32,6 +32,8 @@ public class AccountsPageTest_Danial extends BaseClass {
 	
 		if(fieldname.equalsIgnoreCase("Account Name")) {
 			driver.findElement(By.id("acc2")).sendKeys(value);
+		}else if(fieldname.equalsIgnoreCase("Opportunity Name")) {
+			driver.findElement(By.id("opp3")).sendKeys(value);
 		}
 	}
 	
