@@ -10,8 +10,8 @@ import cucumber.api.junit.Cucumber;
 		features="src/test/resources/features",
 		glue="steps",
 		monochrome=true,
-		dryRun = false,
-		tags= {"@contactFeature"}
+		dryRun = true,
+		tags= {"@opportunityFeature"}
 		)
 public class TestRunner {
 

@@ -10,7 +10,14 @@ import org.openqa.selenium.support.ui.Select;
 import cucumber.api.java.en.Then;
 
 public class OpportunityAnyaTest extends BaseClass {
-
+	
+	@Then("^I enter \"([^\"]*)\" in the \"([^\"]*)\" field$")
+	public void i_enter_in_the_field(String textToEnter, String fieldName) {
+		
+		if(fieldName.equalsIgnoreCase("Opportunity Name")) {
+			driver.findElement(By.id("opp3")).sendKeys(textToEnter);
+		}
+	}
 
 @Then("^I select \"([^\"]*)\" in the \"([^\"]*)\" calendar field$")
 public void i_select_in_the_calendar_field(String arg1, String arg2) {
