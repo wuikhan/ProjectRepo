@@ -12,7 +12,7 @@ Feature: Verify opportunity object fields and drop down values
     And I click the "Opportunities" link in the menu
     When I click the "new" button
     Then I should see "New Opportunity" text
-    And I type "Welcome123" in the "Opportunity Name" field
+    And I type "Welcome123" in the "Opportunity Name" field for Opportunity object
     And I select "2/22/2022" in the "Close Date" calendar field
     And I select "Qualification" for the "opp11" dropdown field
     When I click the "save" button
