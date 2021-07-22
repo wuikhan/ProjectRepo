@@ -6,10 +6,13 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(dryRun = false,
-features = "src/test/resources/features/accounts", 
-glue = "steps", 
-monochrome = true
+
+@CucumberOptions(
+		features="src/test/resources/features",
+		glue="steps",
+		monochrome=true,
+		dryRun = false,
+		tags= {"@newFeature"}
 
 		)
 public class TestRunner {
