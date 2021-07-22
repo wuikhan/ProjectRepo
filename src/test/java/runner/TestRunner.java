@@ -11,7 +11,7 @@ import cucumber.api.junit.Cucumber;
 		glue="steps",
 		monochrome=true,
 		dryRun = false,
-		tags= {"@newFeature"}
+		tags= {"@contactFeature"}
 		)
 public class TestRunner {
 
