@@ -12,7 +12,7 @@ import cucumber.api.junit.Cucumber;
 		glue="steps",
 		monochrome=true,
 		dryRun = false,
-		tags= {"@opps,@log,@acc"}
+		tags= {"@log,@acc,@opps"}
 
 		)
 public class TestRunner {
