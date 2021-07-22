@@ -27,11 +27,14 @@ public class AccountsPageTest extends BaseClass {
 	public void i_should_close_the_browser() {
 		driver.close();
 	}
-
-	@Then("^I should enter \"([^\"]*)\" in the Account Name field$")
-	public void i_should_enter_in_the_Account_Name_field(String value) {
-		driver.findElement(By.id("acc2")).sendKeys(value);
+	@Then("^I should enter \"([^\"]*)\" in the \"([^\"]*)\" field$")
+	public void i_should_enter_in_the_field(String value, String fieldname) {
+	
+		if(fieldname.equalsIgnoreCase("Account Name")) {
+			driver.findElement(By.id("acc2")).sendKeys(value);
+		}
 	}
+	
 
 	@Then("^I should verify the values in the \"([^\"]*)\" dropdown and select \"([^\"]*)\"$")
 	public void i_should_verify_the_values_in_the_dropdown_and_select(String dropdown, String value) {
