@@ -11,7 +11,13 @@ import cucumber.api.java.en.Then;
 
 public class OpportunityAnyaTest extends BaseClass {
 
-
+	@Then("^I type \"([^\"]*)\" in the \"([^\"]*)\" field for Opportunity object$")
+	public void i_type_in_the_field_for_Opportunity_object(String textToEnter, String fieldName) {
+		if(fieldName.equalsIgnoreCase("Opportunity Name")) {
+			driver.findElement(By.id("opp3")).sendKeys(textToEnter);
+		}
+	}
+	
 @Then("^I select \"([^\"]*)\" in the \"([^\"]*)\" calendar field$")
 public void i_select_in_the_calendar_field(String arg1, String arg2) {
   driver.findElement(By.name("opp9")).click();
