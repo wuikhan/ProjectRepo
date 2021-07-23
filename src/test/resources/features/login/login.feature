@@ -8,6 +8,7 @@ Feature: Test the login functionality
     And I enter "Welcome2" password
     When I click the "Login" button
     Then I should see the "Home" link
+    And I take a screenshot with the file name as "login"
     Then I should close the browser
 
   Scenario: As an invalid user, I should not be able to login to the app
