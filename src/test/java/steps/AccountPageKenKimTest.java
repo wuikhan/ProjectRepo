@@ -7,17 +7,18 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-import io.cucumber.java.en.Then;
+import cucumber.api.DataTable;
+import cucumber.api.java.en.Then;
 
 public class AccountPageKenKimTest extends BaseClass {
 
-	@Then("I click the {string} tab")
+	@Then("I click the \"([^\"]*)\" tab")
 	public void i_click_the_tab(String titleName) {
 		driver.findElement(By.xpath("//a[@title='" + titleName + "']")).click();
 	}
 
-	@Then("I should see the values for the {string} field")
-	public void i_should_see_the_values_for_the_field(String fieldID, io.cucumber.datatable.DataTable values) {
+	@Then("I should see the values for the \"([^\"]*)\" field")
+	public void i_should_see_the_values_for_the_field(String fieldID, DataTable values) {
 		WebElement dropDown = driver.findElement(By.id(fieldID));
 		Select sel = new Select(dropDown);
 		List<WebElement> opt = sel.getOptions();
@@ -32,28 +33,28 @@ public class AccountPageKenKimTest extends BaseClass {
 		driver.close();
 	}
 
-	@Then("I enter {string} for the {string} field")
+	@Then("I enter \"([^\"]*)\" for the \"([^\"]*)\" field")
 	public void i_enter_for_the_field(String val1, String fieldID) {
 		driver.findElement(By.id(fieldID)).sendKeys(val1);
 	}
 
-	@Then("I select {string} for the {string} field")
+	@Then("I select \"([^\"]*)\" for the \"([^\"]*)\" field")
 	public void i_select_for_the_field(String val1, String fieldID) {
 		WebElement activeField = driver.findElement(By.id(fieldID));
 		Select choice = new Select(activeField);
 		choice.selectByValue(val1);
 	}
 
-	@Then("I should see the value {string} in the {string} ID field")
+	@Then("I should see the value \"([^\"]*)\" in the \"([^\"]*)\" ID field")
 	public void i_should_see_the_value_in_the_id_field(String val1, String fieldID) {
 		String actualText = driver.findElement(By.id(fieldID)).getText();
 		Assert.assertEquals(actualText, val1);
 	}
 
-	@Then("I should see the the {string} button")
+	@Then("I should see the the \"([^\"]*)\" button")
 	public void i_should_see_the_the_button(String btn) {
-		boolean buttonPresent = driver.findElement(By.xpath("//input[@title='"+btn+"']")).isDisplayed();
-	    Assert.assertTrue(buttonPresent);
+		boolean buttonPresent = driver.findElement(By.xpath("//input[@title='" + btn + "']")).isDisplayed();
+		Assert.assertTrue(buttonPresent);
 	}
 
 }
