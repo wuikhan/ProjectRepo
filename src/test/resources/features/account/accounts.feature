@@ -14,4 +14,5 @@ Feature: Verify account object fields and dropdown values
     And I enter "Hello World" in the "Account Name" field
     When I click the "save" button
     Then I should see "Edit" button is visible
+    And I take a screenshot with the file name as "account"
     
