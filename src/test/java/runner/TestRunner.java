@@ -12,7 +12,6 @@ import cucumber.api.junit.Cucumber;
 		glue="steps",
 		monochrome=true,
 		dryRun = false,
-		tags= {"@acc"},
 		plugin= {
 				"pretty",
 				"html:target/cucumber-report/cucumber-html",

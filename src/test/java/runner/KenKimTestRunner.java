@@ -10,8 +10,7 @@ import cucumber.api.junit.Cucumber;
 		features="src/test/resources/features",
 		glue="steps",
 		monochrome=true,
-		dryRun = false,
-		tags="@regression"
+		dryRun = false
 		)
 
 public class KenKimTestRunner {
