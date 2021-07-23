@@ -12,8 +12,12 @@ import cucumber.api.junit.Cucumber;
 		glue="steps",
 		monochrome=true,
 		dryRun = false,
-		tags= {"@log,@acc,@opps"}
-
+		tags= {"@newFeature"},
+		plugin= {
+				"pretty",
+				"html:target/cucumber-report/cucumber-html",
+				"json:target/cucumber-report/cucumber.json"
+		}
 		)
 public class TestRunner {
 
