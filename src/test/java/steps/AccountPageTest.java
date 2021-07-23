@@ -1,8 +1,16 @@
 package steps;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.Date;
+
+import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
+import cucumber.api.Scenario;
 import cucumber.api.java.en.Then;
 
 
@@ -33,5 +41,13 @@ public class AccountPageTest extends BaseClass {
 	    boolean buttonPresent = driver.findElement(By.xpath("//input[@title='"+btn+"']")).isDisplayed();
 	    Assert.assertTrue(buttonPresent);
 	   // Assert.assertTrue(driver.findElement(By.xpath("//input[@title='"+btn+"']")).isDisplayed());
+	}
+	
+	@Then("^I take a screenshot with the file name as \"([^\"]*)\"$")
+	public void i_take_a_screenshot_with_the_file_name_as(String screenshot) throws IOException {
+		TakesScreenshot ts = ((TakesScreenshot)driver);
+		File srcFile =	ts.getScreenshotAs(OutputType.FILE); // take the ss and store it in the memory
+		File destFile = new File(System.getProperty("user.dir")+"/Screenshots/"+screenshot+".png");
+		FileUtils.copyFile(srcFile, destFile);
 	}
 }
