@@ -12,6 +12,7 @@ import cucumber.api.junit.Cucumber;
 		glue="steps",
 		monochrome=true,
 		dryRun = false,
+		tags= {"@con2"},
 		plugin= {
 				"pretty",
 				"html:target/cucumber-report/cucumber-html",

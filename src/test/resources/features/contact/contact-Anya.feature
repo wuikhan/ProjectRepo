@@ -1,7 +1,7 @@
 #Author: Anya caramelkaya@gmail.com
 Feature: Verify contact object fields and drop down values
 
-  @contactFeature
+  @con2
   Scenario: As a basic user, User should be able to create contact object
     Given I open "chrome" browser
     And I visit the "qa" environment
@@ -13,11 +13,11 @@ Feature: Verify contact object fields and drop down values
     When I click the "new" button
     Then I should see "New Contact" text
     And I type "Allen" in the "Last Name" field for Contact object
-   When I click on the "lookupIcon" field
-   Then I should see "Contact Edit" text on the new page
+   When I click on the "lookupIcon" field 
+   Then I should see "Lookup" text on the new page
    When I click the "new" button
    Then I should type "Allure" name in the "Account Name" field for Contact object
-   When I click the "save" button
-   Then I should see "Allure" text in the "con4" field
+   When I click save button
+   Then I should see "Allure" text is visible
     When I click the "save" button
     Then I should see "Edit" button is visible
