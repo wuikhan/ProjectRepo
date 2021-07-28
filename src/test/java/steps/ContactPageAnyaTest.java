@@ -62,34 +62,20 @@ public class ContactPageAnyaTest extends BaseClass {
 			driver.findElement(By.xpath("//input[@id='2']")).sendKeys(textToEnter);
 		}
 		driver.findElement(By.xpath("//*[@id=\"bottomButtonRow\"]/input[1]")).click();
+		System.out.println("The code is working");
 		
-	}
-	
-	@When("^I click save button$")
-	public void i_click_save_button()  {
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		
-driver.findElement(By.xpath("//td[@class='pbButton' and contains(@id,'topButtonRow')]//input[@name='save']")).submit();
-System.out.println("The code is working");
-
-	}
-	@Then("^I should see \"([^\"]*)\" text is visible$")
-	public void i_should_see_text_is_visible(String text) {
-		driver.switchTo().window(parentWindow);
-		System.out.println("Back to parent window"+driver.getTitle());
-		/*
-		 * String parentWindow= driver.getWindowHandle();
-		 * System.out.println("Parent window "+parentWindow); driver.findElement(By.
-		 * xpath("//img[@title='Account Name Lookup (New Window)']")).click();
-		 */
-		/*Set<String> multipleHandles =driver.getWindowHandles();
-		for(String parentWindow : multipleHandles ) {
+		 String childWindow= driver.getWindowHandle();
+		 Set<String> multipleHandles =driver.getWindowHandles();
+		   for(String parentWindow : multipleHandles ) {
 			   System.out.println("Using window handles "+parentWindow);
-			   if(!childWindow.equals(parentWindow)) {*/		 
-			   
-	boolean textPresent=driver.findElement(By.xpath("//input[@value='"+text+"']")).isDisplayed();
-	Assert.assertTrue(textPresent);
-	}
+			   if(!childWindow.equals(parentWindow)) {
+				   driver.switchTo().window(parentWindow);
+				 
+				   System.out.println("This is a child window"+driver.getTitle());  
+				   
+		driver.findElement(By.id("con5")).sendKeys("123456789+");
+		
+			   }}}}
 	
-
-}
+	
