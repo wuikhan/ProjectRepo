@@ -61,6 +61,8 @@ public class ContactPageAnyaTest extends BaseClass {
 		if (accountField.equalsIgnoreCase("Account Name")) {
 			driver.findElement(By.xpath("//input[@id='2']")).sendKeys(textToEnter);
 		}
+		driver.findElement(By.xpath("//*[@id=\"bottomButtonRow\"]/input[1]")).click();
+		
 	}
 	
 	@When("^I click save button$")
@@ -69,7 +71,7 @@ public class ContactPageAnyaTest extends BaseClass {
 		
 driver.findElement(By.xpath("//td[@class='pbButton' and contains(@id,'topButtonRow')]//input[@name='save']")).submit();
 System.out.println("The code is working");
-driver.quit();
+
 	}
 	@Then("^I should see \"([^\"]*)\" text is visible$")
 	public void i_should_see_text_is_visible(String text) {

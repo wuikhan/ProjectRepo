@@ -17,7 +17,7 @@ Feature: Verify contact object fields and drop down values
    Then I should see "Lookup" text on the new page
    When I click the "new" button
    Then I should type "Allure" name in the "Account Name" field for Contact object
-   When I click save button
+  # When I click save button
    Then I should see "Allure" text is visible
     When I click the "save" button
     Then I should see "Edit" button is visible
