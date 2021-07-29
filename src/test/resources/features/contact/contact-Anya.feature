@@ -19,3 +19,4 @@ Feature: Verify contact object fields and drop down values
    Then I should type "Allure" name in the "Account Name" field for Contact object
     When I click the "save" button
     Then I should see "Edit" button is visible
+    And I take a screenshot with the file name as "contact"
