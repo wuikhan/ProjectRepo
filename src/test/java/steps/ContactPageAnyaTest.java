@@ -1,10 +1,12 @@
 package steps;
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -67,7 +69,33 @@ public class ContactPageAnyaTest extends BaseClass {
 				   System.out.println("This is a new window"+parentWindow+driver.getTitle());  
 				   driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		driver.findElement(By.id("con5")).sendKeys("123456789+");
+		driver.findElement(By.id("con6")).sendKeys("Logistic");
+		driver.findElement(By.id("con10")).sendKeys("703-75-95-98");
 
-			   }}}}
+			   }}}
+		   @Then("^I select \"([^\"]*)\" in the \"([^\"]*)\" birhday calendar field$")
+		   public void i_select_in_the_birhday_calendar_field(String arg1, String nameField)  {
+			   driver.findElement(By.name(nameField)).click();
+			    
+				 WebElement month = driver.findElement(By.id("calMonthPicker")); 
+				 Select selectMonth = new Select(month); 
+				  selectMonth.selectByVisibleText("March");
+				  
+				  WebElement year = driver.findElement(By.id("calYearPicker")); 
+				 Select selectYear = new Select(year); 
+				 driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+				 selectYear.selectByVisibleText("2026");
+				 
+				  List<WebElement> dates = driver.findElements(By.xpath("//tr[@class='calRow']/td"));
+				 
+				 for (WebElement date : dates) {
+				  String value = date.getText();
+				 
+				 if (value.contains("15")) { 
+				  date.click(); break;
+				   }}
+		   }
+
+	}
 
 

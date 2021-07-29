@@ -17,6 +17,13 @@ Feature: Verify contact object fields and drop down values
    Then I should see "Lookup" text on the new page
    When I click the "new" button
    Then I should type "Allure" name in the "Account Name" field for Contact object
+   And I select "2/22/2022" in the "con7" birhday calendar field
+   And I select "Phone Inquiry" for the "con9" dropdown field
+  # And I enter "703-258-22-25" in the "con10" field
+  # When I click on the "lookupIcon" field 
+  # Then I should see "Lookup" text on the new page
+  # When I click the "new" button
+  # Then I should type "Flores" name in the "Reports To" field for Contact object
     When I click the "save" button
     Then I should see "Edit" button is visible
     And I take a screenshot with the file name as "contact"
